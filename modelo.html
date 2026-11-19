@@ -1,0 +1,211 @@
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Ruta de senderismo de Caminando Senderos">
+  <title>Caminando Senderos | Nuestra ruta</title>
+</head>
+
+<body>
+
+  <!-- CABECERA DE LA WEB -->
+  <header>
+    <h1>SENDERANDO 🧭🧭🧭</h1>
+    <p>Descubre nuevos rincones, paso a paso.</p>
+  </header>
+
+  <!-- MENÚ DE NAVEGACIÓN -->
+  <!-- Las almohadillas (#) enlazan con secciones de esta página -->
+  <nav aria-label="Navegación principal">
+    <a href="#presentacion">Nuestra ruta</a> |
+    <a href="#galeria">Galería</a> |
+    <a href="#itinerario">Itinerario</a> |
+    <a href="#video">Vídeo</a> |
+    <a href="recursos.html">Consejos</a>
+  </nav>
+
+  <!-- CONTENIDO PRINCIPAL -->
+  <main>
+
+    <!-- PRESENTACIÓN DE LA RUTA -->
+    <section id="presentacion">
+      <h2>Ruta del Bosque y el Mirador</h2>
+
+      <p>
+        En Caminando Senderos organizamos excursiones
+        para disfrutar de la naturaleza.
+      </p>
+
+      <p>
+        Te presentamos una ruta de ejemplo para
+        descubrir paisajes y aprender a cuidar el entorno.
+        <strong>Esta ruta es ficticia.</strong>
+      </p>
+
+      <article>
+        <h3>Características de la ruta</h3>
+
+        <ul>
+          <li><strong>Distancia:</strong> 6 km.</li>
+          <li><strong>Duración:</strong> 3 horas.</li>
+          <li><strong>Dificultad:</strong> baja.</li>
+          <li><strong>Modalidad:</strong> senderismo.</li>
+        </ul>
+      </article>
+    </section>
+
+    <!-- GALERÍA DE IMÁGENES -->
+    <section id="galeria">
+      <h2>Imágenes de la ruta</h2>
+
+      <p>
+        Estos paisajes representan el entorno
+        de nuestras excursiones.
+      </p>
+
+      <figure>
+        <!-- Imagen obtenida mediante URL externa -->
+        <img
+          src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e"
+          alt="Bosque iluminado por la luz del sol"
+          width="320"
+          height="210"
+        >
+
+        <!-- Imagen guardada en la carpeta imagenes -->
+        <img
+          src="imagenes/paseo.jpg"
+          alt="Pasarela de madera en un bosque"
+          width="320"
+          height="210"
+        >
+
+        <figcaption>
+          Disfruta de paisajes así en nuestros paseos.
+          
+        </figcaption>
+      </figure>
+    </section>
+
+    <!-- ITINERARIO DE LA EXCURSIÓN -->
+    <section id="itinerario">
+      <h2>Itinerario de la jornada</h2>
+
+      <p>Estas son las etapas de nuestra ruta:</p>
+
+      <!-- Lista ordenada -->
+      <ol>
+        <li>Encuentro y bienvenida.</li>
+        <li>Caminata por el bosque.</li>
+        <li>Descanso en el mirador.</li>
+        <li>Regreso al punto de partida.</li>
+      </ol>
+
+      <!-- TABLA CON CELDAS COMBINADAS -->
+      <!-- rowspan combina filas y colspan combina columnas -->
+      <table border="1">
+
+        <caption>Programa de actividades</caption>
+
+        <thead>
+          <tr>
+            <th scope="col">Hora</th>
+            <th scope="col">Actividad</th>
+            <th scope="col">Lugar</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr>
+            <th scope="row">09:00</th>
+            <td>Bienvenida</td>
+            <td>Punto de encuentro</td>
+          </tr>
+
+          <tr>
+            <th scope="row" rowspan="2">09:30-11:00 </th>
+            <td>Caminata</td>
+            <td>Sendero</td>
+          </tr>
+
+          <tr>
+            <td>Observación de flora</td>
+            <td>Bosque</td>
+          </tr>
+
+          <tr>
+            <th scope="row">12:00</th>
+            <td colspan="2">Regreso y despedida</td>
+          </tr>
+        </tbody>
+
+      </table>
+    </section>
+
+    <!-- VÍDEO DE YOUTUBE -->
+    <section id="video">
+      <h2>Descubre la naturaleza en vídeo</h2>
+
+      <p>
+        Disfruta de este vídeo sobre la naturaleza.
+      </p>
+
+      <iframe
+        width="560"
+        height="315"
+        src="https://www.youtube-nocookie.com/embed/6v2L2UGZJAM"
+        title="Vídeo divulgativo sobre la naturaleza"
+        loading="lazy"
+        allowfullscreen>
+      </iframe>
+
+      
+    </section>
+
+
+<!-- INFORMACIÓN COMPLEMENTARIA -->
+<aside>
+  <h2>Antes de salir...</h2>
+
+  <ul>
+    <li>
+      Consulta la previsión meteorológica en
+      <a href="https://www.eltiempo.es"
+         target="_blank"
+         >
+        El Tiempo
+      </a>.
+    </li>
+
+    <li>Lleva suficiente agua para la ruta.</li>
+
+    <li>Utiliza ropa y calzado cómodos.</li>
+
+    <li>Lleva protección solar y una gorra.</li>
+
+    <li>
+      <a href="recursos.html">
+        Consulta nuestros consejos para senderistas
+      </a>.
+    </li>
+  </ul>
+</aside>
+
+
+  </main>
+
+  <!-- PIE DE PÁGINA -->
+  <footer>
+    <p>Caminando Senderos &copy; 2026</p>
+
+    <p>
+      <a href="#presentacion">Volver al inicio</a> |
+      <a href="recursos.html">Página de consejos</a>
+    </p>
+  </footer>
+
+</body>
+</html>
