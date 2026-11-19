@@ -11,11 +11,11 @@ No recibirás el código HTML de esa web ni archivos de ejemplo. **Este README e
 Al finalizar debes haber creado **dos páginas HTML enlazadas**:
 
 - **`index.html`**: la página principal, con la presentación de la ruta, una galería de imágenes, el itinerario, una tabla de horarios y un vídeo.
-- **`recursos.html`**: la página de consejos para senderistas, con navegación para volver a la página principal.
+- **`consejos.html`**: la página de consejos para senderistas, con navegación para volver a la página principal.
 
 Tu trabajo consiste en reproducir **el contenido, el orden de los apartados y el funcionamiento de la navegación**. No es necesario que inventes otra empresa ni diseñes una página diferente.
 
-> **Norma fundamental:** trabaja exclusivamente con HTML. No utilices hojas de estilos CSS, `<style>`, atributos `style` ni JavaScript. Puedes utilizar los atributos HTML solicitados, como `width`, `height`, `rowspan`, `colspan` y `border`.
+
 
 ## 2. Accede a la web que debes reproducir
 
@@ -75,9 +75,9 @@ Aquí tienes un ejemplo.
 |---|---|
 | Nuestra ruta | `#presentacion` |
 | Galería | `#galeria` |
-| Itinerario | `#itinerario` |
+
 | Vídeo | `#video` |
-| Consejos | `recursos.html` |
+| Consejos | `consejos.html` |
 
 Los primeros cuatro son **enlaces internos con anclas**; el último abre **otra página de tu proyecto**.
 
@@ -114,18 +114,7 @@ Incluye **dos imágenes una al lado de la otra** dentro de un `<figure>`, seguid
 **Cómo intentar que aparezcan una junto a la otra sin CSS:** coloca las dos etiquetas `<img>` seguidas, sin un `<p>` ni un `<figcaption>` entre ellas. Si la ventana tiene espacio suficiente podrán quedar en la misma línea; **no es obligatorio garantizarlo en todos los tamaños de pantalla**.
 
 
-### E. Itinerario: lista ordenada
 
-Crea `<section id="itinerario">` y el encabezado **Itinerario de la jornada**.
-
-**Aquí debes utilizar una lista ordenada `<ol>`**, ya que las etapas suceden en este orden:
-
-1. Encuentro y bienvenida.
-2. Caminata por el bosque.
-3. Descanso en el mirador.
-4. Regreso al punto de partida.
-
-Cada etapa se escribe en un `<li>`.
 
 ### F. Tabla de horarios: `rowspan` y `colspan`
 
@@ -135,28 +124,30 @@ Utiliza estas etiquetas:
 
 - `<table>` para crear la tabla; se permite `border="2"` para ver sus bordes en esta práctica.
 - `<caption>` para el título de la tabla.
-- `<thead>` para la fila de encabezados y `<tbody>` para los datos.
-- `<tr>` para las filas.
-- `<th scope="col">` para los tres encabezados de columna.
-- `<th scope="row">` para las horas cuando corresponda.
+- `<thead>` para la fila de encabezados y `<tbody>` para los datos. Ponle un color verde. 
+   <thead style="background-color: rgb(9, 149, 116);">
+- `<tr>` para las filas. En total serán tres filas. 
+
+- `<th scope="col">` para los tres encabezados de columna. Usa scope y mejora la accesibilidad. Scope indica a los 
+lectores de pantalla si es una columna o una fila. 
+            <th scope="col">Hora</th>
+            <th scope="col">Actividad</th>
+            <th scope="col">Lugar</th>
+- `<th scope="row">` para identificar las filas. 
+
+
+
 - `<td>` para las demás celdas.
 
 **Atención a las dos celdas especiales:**
 
 **1. `rowspan="2"`: une dos filas.** En la hora **09:30–11:00**, una sola celda de la columna **Hora** corresponde a las actividades **Caminata / Sendero** y **Observación de flora / Bosque**. Escribe `rowspan="2"` en la celda de la hora. **En la fila siguiente no vuelvas a crear una celda para la hora**: ya está ocupada por la celda expandida.
+     <th scope="row" rowspan="2">09:30-11:00 </th>
 
 **2. `colspan="2"`: une dos columnas.** En la última fila, a las **12:00**, el texto **Regreso y despedida** debe ocupar conjuntamente las columnas **Actividad** y **Lugar**. Coloca `colspan="2"` en esa celda y **no añadas otra celda para Lugar**.
 
-Resumen de lo que debes ver en el modelo:
+      <td colspan="2">Regreso y despedida</td>
 
-| Hora | Actividad | Lugar |
-|---|---|---|
-| 09:00 | Bienvenida | Punto de encuentro |
-| 09:30–11:00 *(hora compartida por dos filas)* | Caminata | Sendero |
-| *(la misma celda de hora continúa)* | Observación de flora | Bosque |
-| 12:00 | Regreso y despedida *(ocupa Actividad y Lugar)* | |
-
-> Esta tabla del README es una **explicación**, no la tabla HTML resuelta. En tu web debes utilizar los atributos `rowspan` y `colspan` para conseguir la unión real de celdas.
 
 ### G. Vídeo de YouTube
 
@@ -167,32 +158,22 @@ El `<iframe>` debe contener el enlace que te facilita you tube.
 
 ### H. Información complementaria: «Antes de salir...»
 
-Crea una `<section>` con un encabezado `<h2>` y **una lista desordenada `<ul>`** con estos consejos, cada uno en su `<li>`:
+Crea una `<section>` con un encabezado `<h2>` y que enlace con la página de consejos.
 
-- Consultar el tiempo mediante **un enlace externo** a `https://www.eltiempo.es`.
-- Llevar suficiente agua.
-- Utilizar ropa y calzado cómodos.
-- Llevar protección solar y una gorra.
-- Consultar la segunda página de consejos mediante un enlace a `recursos.html`.
+
 
 Haz que el enlace externo se abra en otra pestaña con `target="_blank"`.
 
-### I. Pie de página
 
-Crea un `<footer>` con:
 
-- El nombre de la empresa y el año.
-- Un enlace a `#presentacion` para volver al inicio de la ruta.
-- Un enlace a `recursos.html` para entrar en la página de consejos.
-
-## 5. Segunda página: `recursos.html`
+## 5. Segunda página: `consejos.html`
 
 **También debes reproducir la segunda página que se ve al pulsar «Consejos» en el sitio publicado.** No se entrega su código; debes observar su aspecto, sus textos y sus enlaces.
 
 Como mínimo, comprueba que tu página:
 
-- Es un documento HTML5 completo, con `<title>` propio y `lang="es"`.
-- Tiene cabecera, menú, contenido principal y pie de página bien estructurados. El contenido de esta página es libre.
+- Es un documento HTML5 completo, con `<title>` propio y favicon. 
+-Cómo mínimo debe tener una lista no ordenada con un consejo y un enlace que lleve a visitar la página del tiempo. Esa pestaña se abrirá en otra pestaña. 
 - Debe garantizar la usabilidad de forma que el usuario pueda volver a la página de origen (index).
 
 
@@ -229,48 +210,12 @@ Añade **al menos un comentario HTML**. Puedes señalar los bloques principales,
 
 Los comentarios sirven para organizar el código y no se muestran como texto en la página. Comprueba que los cierras correctamente con `-->`.
 
-## 8. Test de 30 preguntas
 
-Desde **la misma URL publicada del apartado 2**, vuelve a la portada y entra en **«Realizar el test de 30 preguntas»**.
 
-El test repasa HTML5, estructura del documento, etiquetas, atributos, listas, tablas, enlaces, accesibilidad, usabilidad y comentarios. No tienes que descargar ningún archivo del test: se realiza desde el navegador.
 
-## 9. Errores habituales
 
-- Escribir `href="galeria"` en vez de `href="#galeria"` para un enlace a una sección.
-- Repetir un mismo `id` en dos elementos de una página.
-- Enlazar a `recursos.html` sin haber creado ese archivo.
-- Poner la URL de una **página web** en el `src` de una imagen en vez de la URL directa de la fotografía.
-- Confundir `<ul>` (lista sin orden) con `<ol>` (lista con secuencia).
-- Crear celdas de más después de usar `rowspan="2"` o `colspan="2"`.
-- Omitir la fuente de alguna fotografía o utilizarla sin comprobar su licencia.
-- Olvidar `alt` en las fotografías o `title` en el vídeo incrustado.
-- Incorporar CSS o JavaScript, que todavía no forman parte de esta práctica.
 
-## 10. Lista de comprobación antes de entregar
-
-- [ ] He visitado la **web publicada** y he examinado sus dos páginas.
-- [ ] He creado `index.html` y `recursos.html` desde cero.
-- [ ] Los dos documentos tienen estructura HTML5 completa y `lang="es"`.
-- [ ] La cabecera muestra SENDERANDO y su lema.
-- [ ] Funcionan las cuatro anclas del menú.
-- [ ] Se puede ir de la primera página a Consejos y regresar.
-- [ ] He utilizado `<ul>` para las características de la ruta.
-- [ ] He utilizado `<ol>` para las etapas del itinerario.
-- [ ] Aparecen las dos imágenes con `src`, `alt`, `width` y `height`.
-- [ ] He indicado la fuente de **cada imagen** y revisado su licencia.
-- [ ] La tabla tiene tres columnas, `<caption>` y encabezados.
-- [ ] La hora 09:30–11:00 utiliza `rowspan="2"`.
-- [ ] «Regreso y despedida» utiliza `colspan="2"`.
-- [ ] El vídeo está insertado mediante `<iframe>` con `title`.
-- [ ] El `<aside>` contiene una lista `<ul>` de recomendaciones.
-- [ ] Funciona el enlace externo para consultar el tiempo.
-- [ ] He aplicado al menos tres medidas de accesibilidad.
-- [ ] He incluido al menos un comentario HTML.
-- [ ] No he utilizado CSS, JavaScript ni `style`.
-- [ ] He realizado el test de 30 preguntas en la página publicada.
-
-## 11. Entrega de la actividad
+##  Entrega de la actividad
 
 **Lo que recibes:** únicamente este archivo `README.md` y el enlace a la web publicada. **No se entregan archivos HTML modelo**, porque debes escribirlos tú.
 
